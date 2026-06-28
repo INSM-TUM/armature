@@ -1,0 +1,109 @@
+format_version: '2.0'
+description: ''
+source: /Users/choker/dev/armature/Test Data/Discovery/event_log_09_NegatedEquivalence_Parallelism.xes
+num_traces: 285
+num_variants: 5
+activities:
+- a
+- b
+- c
+- d
+- e
+- f
+dependencies:
+  a:
+    b:
+      temporal: no_ordering
+      existential: nand
+    c:
+      temporal: eventual
+      existential: implication
+    d:
+      temporal: eventual
+      existential: implication
+    e:
+      temporal: no_ordering
+      existential: nand
+    f:
+      temporal: no_ordering
+      existential: nand
+  b:
+    a:
+      temporal: no_ordering
+      existential: nand
+    c:
+      temporal: eventual
+      existential: implication
+    d:
+      temporal: eventual
+      existential: implication
+    e:
+      temporal: no_ordering
+      existential: nand
+    f:
+      temporal: no_ordering
+      existential: nand
+  c:
+    a:
+      temporal: eventual_backward
+      existential: implication_backward
+    b:
+      temporal: eventual_backward
+      existential: implication_backward
+    d:
+      temporal: independence
+      existential: equivalence
+    e:
+      temporal: no_ordering
+      existential: negated_equivalence
+    f:
+      temporal: no_ordering
+      existential: negated_equivalence
+  d:
+    a:
+      temporal: eventual_backward
+      existential: implication_backward
+    b:
+      temporal: eventual_backward
+      existential: implication_backward
+    c:
+      temporal: independence
+      existential: equivalence
+    e:
+      temporal: no_ordering
+      existential: negated_equivalence
+    f:
+      temporal: no_ordering
+      existential: negated_equivalence
+  e:
+    a:
+      temporal: no_ordering
+      existential: nand
+    b:
+      temporal: no_ordering
+      existential: nand
+    c:
+      temporal: no_ordering
+      existential: negated_equivalence
+    d:
+      temporal: no_ordering
+      existential: negated_equivalence
+    f:
+      temporal: direct
+      existential: equivalence
+  f:
+    a:
+      temporal: no_ordering
+      existential: nand
+    b:
+      temporal: no_ordering
+      existential: nand
+    c:
+      temporal: no_ordering
+      existential: negated_equivalence
+    d:
+      temporal: no_ordering
+      existential: negated_equivalence
+    e:
+      temporal: direct_backward
+      existential: equivalence

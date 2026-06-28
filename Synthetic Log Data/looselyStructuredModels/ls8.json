@@ -1,0 +1,94 @@
+{
+  "nodes": [
+    {
+      "id": "node_1777357127829",
+      "name": "a",
+      "x": 264.53476521713674,
+      "y": 108.77138559350493,
+      "type": "activity",
+      "constraint": "absence_n",
+      "constraintValue": 1
+    },
+    {
+      "id": "activity_1777357131435",
+      "type": "activity",
+      "name": "b",
+      "x": 464.53476521713674,
+      "y": 108.77138559350493,
+      "width": 100,
+      "height": 50,
+      "constraint": "exactly_n",
+      "constraintValue": 1
+    },
+    {
+      "id": "node_1777357135183",
+      "name": "c",
+      "x": 263.3914078959712,
+      "y": 251.69105073919408,
+      "type": "activity",
+      "constraint": "absence_n",
+      "constraintValue": 1
+    },
+    {
+      "id": "node_1777357139575",
+      "name": "d",
+      "x": 468.0523683845981,
+      "y": 251.69105073919408,
+      "type": "activity",
+      "constraint": "absence_n",
+      "constraintValue": 1
+    },
+    {
+      "id": "node_1777357144761",
+      "name": "e",
+      "x": 671.5699715520594,
+      "y": 252.83440806035958,
+      "type": "activity",
+      "constraint": "absence_n",
+      "constraintValue": 2
+    },
+    {
+      "id": "node_1777357144761",
+      "name": "e",
+      "x": 671.5699715520594,
+      "y": 252.83440806035958,
+      "type": "activity",
+      "constraint": "absence_n",
+      "constraintValue": 2
+    }
+  ],
+  "relations": [
+    {
+      "id": "relation_1777357131435_506",
+      "type": "resp_existence",
+      "sourceId": "node_1777357127829",
+      "targetId": "activity_1777357131435",
+      "waypoints": [
+        {
+          "x": 314.53476521713674,
+          "y": 108.77138559350493
+        },
+        {
+          "x": 414.53476521713674,
+          "y": 108.77138559350493
+        }
+      ]
+    },
+    {
+      "id": "relation_1777357148376_978",
+      "type": "response",
+      "sourceId": "node_1777357135183",
+      "targetId": "node_1777357139575",
+      "waypoints": [
+        {
+          "x": 313.3914078959712,
+          "y": 251.69105073919408
+        },
+        {
+          "x": 418.0523683845981,
+          "y": 251.69105073919408
+        }
+      ]
+    }
+  ]
+}

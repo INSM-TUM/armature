@@ -1,0 +1,75 @@
+format_version: '2.0'
+description: ''
+source: /Users/choker/kerstin/armature/Test Data/Discovery/noise/event_log_noise_06.xes
+activities:
+- a
+- b
+- c
+- d
+- e
+dependencies:
+  a:
+    b:
+      temporal: eventual
+      existential: implication_backward
+    c:
+      temporal: eventual
+      existential: implication_backward
+    d:
+      temporal: independence
+      existential: or
+    e:
+      temporal: true_eventual
+      existential: implication_backward
+  b:
+    a:
+      temporal: eventual_backward
+      existential: implication
+    c:
+      temporal: independence
+      existential: independence
+    d:
+      temporal: independence
+      existential: independence
+    e:
+      temporal: eventual
+      existential: implication_backward
+  c:
+    a:
+      temporal: eventual_backward
+      existential: implication
+    b:
+      temporal: independence
+      existential: independence
+    d:
+      temporal: independence
+      existential: independence
+    e:
+      temporal: eventual
+      existential: implication_backward
+  d:
+    a:
+      temporal: independence
+      existential: or
+    b:
+      temporal: independence
+      existential: independence
+    c:
+      temporal: independence
+      existential: independence
+    e:
+      temporal: eventual
+      existential: implication_backward
+  e:
+    a:
+      temporal: true_eventual_backward
+      existential: implication
+    b:
+      temporal: eventual_backward
+      existential: implication
+    c:
+      temporal: eventual_backward
+      existential: implication
+    d:
+      temporal: eventual_backward
+      existential: implication

@@ -1,0 +1,77 @@
+format_version: '2.0'
+description: ''
+source: /Users/choker/dev/armature/Test Data/Discovery/event_log_01_negatedEquivalence.xes
+num_traces: 70
+num_variants: 2
+activities:
+- a
+- b
+- c
+- d
+- e
+dependencies:
+  a:
+    b:
+      temporal: direct
+      existential: implication_backward
+    c:
+      temporal: true_eventual
+      existential: implication_backward
+    d:
+      temporal: true_eventual
+      existential: equivalence
+    e:
+      temporal: direct
+      existential: implication_backward
+  b:
+    a:
+      temporal: direct_backward
+      existential: implication
+    c:
+      temporal: direct
+      existential: equivalence
+    d:
+      temporal: true_eventual
+      existential: implication
+    e:
+      temporal: no_ordering
+      existential: negated_equivalence
+  c:
+    a:
+      temporal: true_eventual_backward
+      existential: implication
+    b:
+      temporal: direct_backward
+      existential: equivalence
+    d:
+      temporal: direct
+      existential: implication
+    e:
+      temporal: no_ordering
+      existential: negated_equivalence
+  d:
+    a:
+      temporal: true_eventual_backward
+      existential: equivalence
+    b:
+      temporal: true_eventual_backward
+      existential: implication_backward
+    c:
+      temporal: direct_backward
+      existential: implication_backward
+    e:
+      temporal: direct_backward
+      existential: implication_backward
+  e:
+    a:
+      temporal: direct_backward
+      existential: implication
+    b:
+      temporal: no_ordering
+      existential: negated_equivalence
+    c:
+      temporal: no_ordering
+      existential: negated_equivalence
+    d:
+      temporal: direct
+      existential: implication

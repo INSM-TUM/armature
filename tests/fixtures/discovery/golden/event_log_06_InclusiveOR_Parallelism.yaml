@@ -1,0 +1,51 @@
+format_version: '2.0'
+description: ''
+source: /Users/choker/dev/armature/Test Data/Discovery/event_log_06_InclusiveOR_Parallelism.xes
+num_traces: 7
+num_variants: 7
+activities:
+- a
+- b
+- c
+- d
+dependencies:
+  a:
+    b:
+      temporal: eventual
+      existential: equivalence
+    c:
+      temporal: eventual
+      existential: equivalence
+    d:
+      temporal: direct_backward
+      existential: or
+  b:
+    a:
+      temporal: eventual_backward
+      existential: equivalence
+    c:
+      temporal: independence
+      existential: equivalence
+    d:
+      temporal: eventual
+      existential: or
+  c:
+    a:
+      temporal: eventual_backward
+      existential: equivalence
+    b:
+      temporal: independence
+      existential: equivalence
+    d:
+      temporal: eventual
+      existential: or
+  d:
+    a:
+      temporal: direct
+      existential: or
+    b:
+      temporal: eventual_backward
+      existential: or
+    c:
+      temporal: eventual_backward
+      existential: or

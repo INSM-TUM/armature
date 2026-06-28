@@ -1,0 +1,97 @@
+{% extends "base.html.j2" %}
+
+{% block title %}Discovery Validation Report{% endblock %}
+
+{% block content %}
+<h1>Discovery Validation Report</h1>
+<p class="timestamp">Generated: {{ timestamp }}</p>
+
+<h2>Summary</h2>
+<table class="summary-table">
+    <tr>
+        <th>Metric</th>
+        <th>Value</th>
+    </tr>
+    <tr>
+        <td>Clean logs processed</td>
+        <td>{{ results.files|length }}</td>
+    </tr>
+    <tr>
+        <td>Processing errors</td>
+        <td class="{% if results.errors|length > 0 %}status-error{% else %}status-ok{% endif %}">
+            {{ results.errors|length }}
+        </td>
+    </tr>
+    <tr>
+        <td>Noisy comparisons</td>
+        <td>{{ results.noisy_comparisons|length }}</td>
+    </tr>
+    <tr>
+        <td>Duration</td>
+        <td>{{ "%.2f"|format(results.end_time - results.start_time) }}s</td>
+    </tr>
+</table>
+
+{% if results.errors %}
+<h2 class="status-error">Errors</h2>
+<table class="summary-table">
+    <tr>
+        <th>File</th>
+        <th>Error</th>
+    </tr>
+    {% for error in results.errors %}
+    <tr>
+        <td>{{ error.file }}</td>
+        <td class="status-error">{{ error.error }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endif %}
+
+<h2>Clean Log Results</h2>
+<table class="summary-table">
+    <tr>
+        <th>Log Name</th>
+        <th>Activities</th>
+        <th>Non-default Cells</th>
+        <th>Traces</th>
+        <th>Golden</th>
+    </tr>
+    {% for file in results.files %}
+    <tr>
+        <td>{{ file.name }}</td>
+        <td>{{ file.activities }}</td>
+        <td>{{ file.relationships }}</td>
+        <td>{{ file.traces }}</td>
+        <td class="{% if file.has_golden %}status-ok{% else %}status-warn{% endif %}">
+            {% if file.has_golden %}Match{% else %}None{% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% for file in results.files %}
+<button class="collapsible">{{ file.name }} (Clean) - Matrix Grid ({{ file.activities }} activities)</button>
+<div class="content">
+    {% if file.matrix %}
+    {% with matrix=file.matrix %}
+    {% include "matrix_grid.html.j2" %}
+    {% endwith %}
+    {% else %}
+    <p>Matrix data not available - see YAML file at {{ file.result_path }}</p>
+    {% endif %}
+</div>
+{% endfor %}
+
+{% if results.noisy_comparisons %}
+<h2>Noisy Log Comparisons</h2>
+<p>Comparing discovery results between clean and noisy variants.</p>
+{% for comp in results.noisy_comparisons %}
+<button class="collapsible">{{ comp.clean_name }} vs {{ comp.noisy_name }} ({{ comp.changes|length }} differences)</button>
+<div class="content">
+    {% include "diff_view.html.j2" %}
+</div>
+{% endfor %}
+{% endif %}
+
+{% endblock %}

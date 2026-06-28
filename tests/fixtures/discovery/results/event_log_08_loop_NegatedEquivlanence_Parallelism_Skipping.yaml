@@ -1,0 +1,55 @@
+format_version: '2.0'
+description: ''
+source: /Users/choker/kerstin/armature/Test Data/Discovery/event_log_08_loop_NegatedEquivlanence_Parallelism_Skipping.xes
+activities:
+- a
+- b
+- c
+- e
+dependencies:
+  a:
+    b:
+      temporal: eventual
+      existential: equivalence
+    c:
+      temporal: eventual
+      existential: equivalence
+    e:
+      temporal: true_eventual
+      existential: implication_backward
+  b:
+    a:
+      temporal: eventual_backward
+      existential: equivalence
+    b:
+      temporal: eventual_backward
+      existential: implication_backward
+    c:
+      temporal: independence
+      existential: equivalence
+    e:
+      temporal: eventual
+      existential: implication_backward
+  c:
+    a:
+      temporal: eventual_backward
+      existential: equivalence
+    b:
+      temporal: independence
+      existential: equivalence
+    c:
+      temporal: eventual_backward
+      existential: implication_backward
+    e:
+      temporal: eventual
+      existential: implication_backward
+  e:
+    a:
+      temporal: true_eventual_backward
+      existential: implication
+    b:
+      temporal: eventual_backward
+      existential: implication
+    c:
+      temporal: eventual_backward
+      existential: implication

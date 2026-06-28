@@ -1,0 +1,77 @@
+format_version: '2.0'
+description: ''
+source: /Users/choker/dev/armature/Test Data/Discovery/event_log_07_nonBlockStructure.xes
+num_traces: 10
+num_variants: 10
+activities:
+- a
+- b
+- c
+- d
+- e
+dependencies:
+  a:
+    b:
+      temporal: direct
+      existential: implication_backward
+    c:
+      temporal: direct
+      existential: implication_backward
+    d:
+      temporal: eventual
+      existential: equivalence
+    e:
+      temporal: eventual
+      existential: equivalence
+  b:
+    a:
+      temporal: eventual
+      existential: implication
+    c:
+      temporal: no_ordering
+      existential: negated_equivalence
+    d:
+      temporal: eventual
+      existential: implication
+    e:
+      temporal: eventual
+      existential: implication
+  c:
+    a:
+      temporal: eventual
+      existential: implication
+    b:
+      temporal: no_ordering
+      existential: negated_equivalence
+    d:
+      temporal: eventual
+      existential: implication
+    e:
+      temporal: eventual
+      existential: implication
+  d:
+    a:
+      temporal: eventual_backward
+      existential: equivalence
+    b:
+      temporal: eventual_backward
+      existential: implication_backward
+    c:
+      temporal: eventual_backward
+      existential: implication_backward
+    e:
+      temporal: independence
+      existential: equivalence
+  e:
+    a:
+      temporal: direct
+      existential: equivalence
+    b:
+      temporal: eventual_backward
+      existential: implication_backward
+    c:
+      temporal: eventual_backward
+      existential: implication_backward
+    d:
+      temporal: independence
+      existential: equivalence

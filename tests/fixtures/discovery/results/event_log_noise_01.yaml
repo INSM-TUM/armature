@@ -1,0 +1,148 @@
+format_version: '2.0'
+description: ''
+source: /Users/choker/kerstin/armature/Test Data/Discovery/noise/event_log_noise_01.xes
+activities:
+- a
+- b
+- c
+- d
+- e
+- e1
+- f
+dependencies:
+  a:
+    b:
+      temporal: eventual
+      existential: implication_backward
+    c:
+      temporal: eventual
+      existential: implication_backward
+    d:
+      temporal: true_eventual
+      existential: equivalence
+    e:
+      temporal: direct
+      existential: implication_backward
+    e1:
+      temporal: direct
+      existential: implication_backward
+    f:
+      temporal: direct
+      existential: implication_backward
+  b:
+    a:
+      temporal: eventual_backward
+      existential: implication
+    c:
+      temporal: independence
+      existential: implication_backward
+    d:
+      temporal: eventual
+      existential: implication
+    e:
+      temporal: no_ordering
+      existential: nand
+    e1:
+      temporal: no_ordering
+      existential: nand
+    f:
+      temporal: no_ordering
+      existential: nand
+  c:
+    a:
+      temporal: eventual_backward
+      existential: implication
+    b:
+      temporal: independence
+      existential: implication
+    d:
+      temporal: eventual
+      existential: implication
+    e:
+      temporal: no_ordering
+      existential: nand
+    e1:
+      temporal: no_ordering
+      existential: nand
+    f:
+      temporal: no_ordering
+      existential: nand
+  d:
+    a:
+      temporal: true_eventual_backward
+      existential: equivalence
+    b:
+      temporal: eventual_backward
+      existential: implication_backward
+    c:
+      temporal: eventual_backward
+      existential: implication_backward
+    e:
+      temporal: direct_backward
+      existential: implication_backward
+    e1:
+      temporal: direct_backward
+      existential: implication_backward
+    f:
+      temporal: direct_backward
+      existential: implication_backward
+  e:
+    a:
+      temporal: direct_backward
+      existential: implication
+    b:
+      temporal: no_ordering
+      existential: nand
+    c:
+      temporal: no_ordering
+      existential: nand
+    d:
+      temporal: direct
+      existential: implication
+    e:
+      temporal: eventual_backward
+      existential: implication_backward
+    e1:
+      temporal: no_ordering
+      existential: nand
+    f:
+      temporal: no_ordering
+      existential: nand
+  e1:
+    a:
+      temporal: direct_backward
+      existential: implication
+    b:
+      temporal: no_ordering
+      existential: nand
+    c:
+      temporal: no_ordering
+      existential: nand
+    d:
+      temporal: direct
+      existential: implication
+    e:
+      temporal: no_ordering
+      existential: nand
+    f:
+      temporal: no_ordering
+      existential: nand
+  f:
+    a:
+      temporal: direct_backward
+      existential: implication
+    b:
+      temporal: no_ordering
+      existential: nand
+    c:
+      temporal: no_ordering
+      existential: nand
+    d:
+      temporal: direct
+      existential: implication
+    e:
+      temporal: no_ordering
+      existential: nand
+    e1:
+      temporal: no_ordering
+      existential: nand

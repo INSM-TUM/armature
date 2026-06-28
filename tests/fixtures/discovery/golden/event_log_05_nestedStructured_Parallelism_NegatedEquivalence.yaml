@@ -1,0 +1,77 @@
+format_version: '2.0'
+description: ''
+source: /Users/choker/dev/armature/Test Data/Discovery/event_log_05_nestedStructured_Parallelism_NegatedEquivalence.xes
+num_traces: 38
+num_variants: 4
+activities:
+- a
+- b
+- c
+- d
+- e
+dependencies:
+  a:
+    b:
+      temporal: direct
+      existential: implication_backward
+    c:
+      temporal: direct_backward
+      existential: equivalence
+    d:
+      temporal: true_eventual
+      existential: equivalence
+    e:
+      temporal: direct
+      existential: implication_backward
+  b:
+    a:
+      temporal: direct_backward
+      existential: implication
+    c:
+      temporal: direct
+      existential: implication
+    d:
+      temporal: eventual
+      existential: implication
+    e:
+      temporal: no_ordering
+      existential: negated_equivalence
+  c:
+    a:
+      temporal: direct
+      existential: equivalence
+    b:
+      temporal: direct_backward
+      existential: implication_backward
+    d:
+      temporal: eventual
+      existential: equivalence
+    e:
+      temporal: direct_backward
+      existential: implication_backward
+  d:
+    a:
+      temporal: true_eventual_backward
+      existential: equivalence
+    b:
+      temporal: eventual_backward
+      existential: implication_backward
+    c:
+      temporal: eventual_backward
+      existential: equivalence
+    e:
+      temporal: eventual_backward
+      existential: implication_backward
+  e:
+    a:
+      temporal: direct_backward
+      existential: implication
+    b:
+      temporal: no_ordering
+      existential: negated_equivalence
+    c:
+      temporal: direct
+      existential: implication
+    d:
+      temporal: eventual
+      existential: implication

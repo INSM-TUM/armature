@@ -1,0 +1,83 @@
+{
+  "nodes": [
+    {
+      "id": "activity_a",
+      "type": "activity",
+      "name": "a",
+      "x": 439.3205040528476,
+      "y": 197.23130963597293,
+      "constraint": "init",
+      "constraintValue": null
+    },
+    {
+      "id": "activity_b",
+      "type": "activity",
+      "name": "b",
+      "x": 594.0022520471834,
+      "y": 357.24294667762126,
+      "constraint": "absence_n",
+      "constraintValue": 2
+    },
+    {
+      "id": "activity_c",
+      "type": "activity",
+      "name": "c",
+      "x": 331.26590100671626,
+      "y": 354.766443374808,
+      "constraint": "absence_n",
+      "constraintValue": 2
+    },
+    {
+      "id": "activity_d",
+      "type": "activity",
+      "name": "d",
+      "x": 595.3535737642609,
+      "y": 198.63645175151672,
+      "constraint": "absence_n",
+      "constraintValue": 2
+    },
+    {
+      "id": "activity_e",
+      "type": "activity",
+      "name": "e",
+      "x": 293.57372231245705,
+      "y": 194.14725510048805,
+      "constraint": "absence_n",
+      "constraintValue": 3
+    }
+  ],
+  "relations": [
+    {
+      "id": "relation_1",
+      "type": "coexistence",
+      "sourceId": "activity_c",
+      "targetId": "activity_b",
+      "waypoints": [
+        {
+          "x": 381.26590100671626,
+          "y": 355.2377339467075
+        },
+        {
+          "x": 544.0022520471834,
+          "y": 356.7716561057217
+        }
+      ]
+    },
+    {
+      "id": "relation_2",
+      "type": "response",
+      "sourceId": "activity_b",
+      "targetId": "activity_d",
+      "waypoints": [
+        {
+          "x": 594.2152511613917,
+          "y": 332.24294667762126
+        },
+        {
+          "x": 595.1405746500526,
+          "y": 223.63645175151672
+        }
+      ]
+    }
+  ]
+}

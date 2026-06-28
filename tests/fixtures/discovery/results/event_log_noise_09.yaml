@@ -1,0 +1,145 @@
+format_version: '2.0'
+description: ''
+source: /Users/choker/kerstin/armature/Test Data/Discovery/noise/event_log_noise_09.xes
+activities:
+- a
+- b
+- c
+- d
+- e
+- f
+- g
+dependencies:
+  a:
+    b:
+      temporal: no_ordering
+      existential: nand
+    c:
+      temporal: eventual
+      existential: independence
+    d:
+      temporal: eventual
+      existential: independence
+    e:
+      temporal: true_eventual
+      existential: independence
+    f:
+      temporal: no_ordering
+      existential: nand
+    g:
+      temporal: no_ordering
+      existential: nand
+  b:
+    a:
+      temporal: no_ordering
+      existential: nand
+    c:
+      temporal: eventual
+      existential: independence
+    d:
+      temporal: eventual
+      existential: independence
+    e:
+      temporal: true_eventual
+      existential: independence
+    f:
+      temporal: no_ordering
+      existential: nand
+    g:
+      temporal: no_ordering
+      existential: nand
+  c:
+    a:
+      temporal: eventual_backward
+      existential: independence
+    b:
+      temporal: eventual_backward
+      existential: independence
+    d:
+      temporal: independence
+      existential: independence
+    e:
+      temporal: eventual
+      existential: independence
+    f:
+      temporal: no_ordering
+      existential: nand
+    g:
+      temporal: no_ordering
+      existential: nand
+  d:
+    a:
+      temporal: eventual_backward
+      existential: independence
+    b:
+      temporal: eventual_backward
+      existential: independence
+    c:
+      temporal: independence
+      existential: independence
+    e:
+      temporal: eventual
+      existential: independence
+    f:
+      temporal: no_ordering
+      existential: nand
+    g:
+      temporal: no_ordering
+      existential: nand
+  e:
+    a:
+      temporal: true_eventual_backward
+      existential: independence
+    b:
+      temporal: true_eventual_backward
+      existential: independence
+    c:
+      temporal: eventual_backward
+      existential: independence
+    d:
+      temporal: eventual_backward
+      existential: independence
+    f:
+      temporal: direct
+      existential: independence
+    g:
+      temporal: true_eventual
+      existential: implication_backward
+  f:
+    a:
+      temporal: no_ordering
+      existential: nand
+    b:
+      temporal: no_ordering
+      existential: nand
+    c:
+      temporal: no_ordering
+      existential: nand
+    d:
+      temporal: no_ordering
+      existential: nand
+    e:
+      temporal: direct_backward
+      existential: independence
+    g:
+      temporal: direct
+      existential: implication_backward
+  g:
+    a:
+      temporal: no_ordering
+      existential: nand
+    b:
+      temporal: no_ordering
+      existential: nand
+    c:
+      temporal: no_ordering
+      existential: nand
+    d:
+      temporal: no_ordering
+      existential: nand
+    e:
+      temporal: true_eventual_backward
+      existential: implication
+    f:
+      temporal: direct_backward
+      existential: implication

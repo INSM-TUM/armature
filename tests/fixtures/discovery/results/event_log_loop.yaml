@@ -1,0 +1,61 @@
+format_version: '2.0'
+description: ''
+source: /Users/choker/kerstin/armature/Test Data/Discovery/event_log_loop.xes
+activities:
+- a
+- b
+- c
+- d
+dependencies:
+  a:
+    a:
+      temporal: no_ordering
+      existential: implication_backward
+    b:
+      temporal: direct
+      existential: equivalence
+    c:
+      temporal: true_eventual
+      existential: equivalence
+    d:
+      temporal: true_eventual
+      existential: equivalence
+  b:
+    a:
+      temporal: direct
+      existential: equivalence
+    b:
+      temporal: no_ordering
+      existential: implication_backward
+    c:
+      temporal: direct
+      existential: equivalence
+    d:
+      temporal: true_eventual
+      existential: equivalence
+  c:
+    a:
+      temporal: true_eventual_backward
+      existential: equivalence
+    b:
+      temporal: direct_backward
+      existential: equivalence
+    c:
+      temporal: no_ordering
+      existential: implication_backward
+    d:
+      temporal: direct
+      existential: equivalence
+  d:
+    a:
+      temporal: true_eventual_backward
+      existential: equivalence
+    b:
+      temporal: true_eventual_backward
+      existential: equivalence
+    c:
+      temporal: direct
+      existential: equivalence
+    d:
+      temporal: no_ordering
+      existential: implication_backward

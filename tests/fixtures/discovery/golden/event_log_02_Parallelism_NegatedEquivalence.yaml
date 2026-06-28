@@ -1,0 +1,109 @@
+format_version: '2.0'
+description: ''
+source: /Users/choker/dev/armature/Test Data/Discovery/event_log_02_Parallelism_NegatedEquivalence.xes
+num_traces: 97
+num_variants: 4
+activities:
+- a
+- b
+- c
+- d
+- e
+- f
+dependencies:
+  a:
+    b:
+      temporal: eventual
+      existential: equivalence
+    c:
+      temporal: eventual
+      existential: equivalence
+    d:
+      temporal: true_eventual
+      existential: equivalence
+    e:
+      temporal: true_eventual
+      existential: implication_backward
+    f:
+      temporal: true_eventual
+      existential: implication_backward
+  b:
+    a:
+      temporal: eventual_backward
+      existential: equivalence
+    c:
+      temporal: independence
+      existential: equivalence
+    d:
+      temporal: eventual
+      existential: equivalence
+    e:
+      temporal: true_eventual
+      existential: implication_backward
+    f:
+      temporal: true_eventual
+      existential: implication_backward
+  c:
+    a:
+      temporal: eventual_backward
+      existential: equivalence
+    b:
+      temporal: independence
+      existential: equivalence
+    d:
+      temporal: eventual
+      existential: equivalence
+    e:
+      temporal: true_eventual
+      existential: implication_backward
+    f:
+      temporal: true_eventual
+      existential: implication_backward
+  d:
+    a:
+      temporal: true_eventual_backward
+      existential: equivalence
+    b:
+      temporal: eventual_backward
+      existential: equivalence
+    c:
+      temporal: eventual_backward
+      existential: equivalence
+    e:
+      temporal: direct
+      existential: implication_backward
+    f:
+      temporal: direct
+      existential: implication_backward
+  e:
+    a:
+      temporal: true_eventual_backward
+      existential: implication
+    b:
+      temporal: true_eventual_backward
+      existential: implication
+    c:
+      temporal: true_eventual_backward
+      existential: implication
+    d:
+      temporal: direct_backward
+      existential: implication
+    f:
+      temporal: no_ordering
+      existential: negated_equivalence
+  f:
+    a:
+      temporal: true_eventual_backward
+      existential: implication
+    b:
+      temporal: true_eventual_backward
+      existential: implication
+    c:
+      temporal: true_eventual_backward
+      existential: implication
+    d:
+      temporal: direct_backward
+      existential: implication
+    e:
+      temporal: no_ordering
+      existential: negated_equivalence

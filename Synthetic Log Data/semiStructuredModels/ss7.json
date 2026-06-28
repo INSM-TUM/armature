@@ -1,0 +1,259 @@
+{
+  "nodes": [
+    {
+      "id": "node_1777357959140",
+      "name": "a",
+      "x": 76.45248588540981,
+      "y": 82.47416720669813,
+      "type": "activity"
+    },
+    {
+      "id": "activity_1777357962333",
+      "type": "activity",
+      "name": "b",
+      "x": 276.4524858854098,
+      "y": 82.47416720669813,
+      "width": 100,
+      "height": 50,
+      "constraint": "exactly_n",
+      "constraintValue": 1
+    },
+    {
+      "id": "node_1777357966252",
+      "name": "c",
+      "x": 75.88080722482707,
+      "y": 280.27498376833194,
+      "type": "activity"
+    },
+    {
+      "id": "activity_1777357968501",
+      "type": "activity",
+      "name": "d",
+      "x": 275.8808072248271,
+      "y": 280.27498376833194,
+      "width": 100,
+      "height": 50,
+      "constraint": null,
+      "constraintValue": null
+    },
+    {
+      "id": "activity_1777357970511",
+      "type": "activity",
+      "name": "e",
+      "x": 475.8808072248271,
+      "y": 280.27498376833194,
+      "width": 100,
+      "height": 50,
+      "constraint": null,
+      "constraintValue": null
+    },
+    {
+      "id": "node_1777357974455",
+      "name": "f",
+      "x": 637.2692519170939,
+      "y": 79.04409524320158,
+      "type": "activity",
+      "constraint": "absence_n",
+      "constraintValue": 2
+    },
+    {
+      "id": "activity_1777357977187",
+      "type": "activity",
+      "name": "g",
+      "x": 837.2692519170939,
+      "y": 79.04409524320158,
+      "width": 100,
+      "height": 50,
+      "constraint": "absence_n",
+      "constraintValue": 2
+    },
+    {
+      "id": "activity_1777357979797",
+      "type": "activity",
+      "name": "h",
+      "x": 838.8967566948775,
+      "y": 169.9410022758599,
+      "width": 100,
+      "height": 50,
+      "constraint": null,
+      "constraintValue": null
+    },
+    {
+      "id": "activity_1777357982503",
+      "type": "activity",
+      "name": "i",
+      "x": 1063.478939099936,
+      "y": 111.05810023583595,
+      "width": 100,
+      "height": 50,
+      "constraint": null,
+      "constraintValue": null
+    },
+    {
+      "id": "node_1777357987600",
+      "name": "j",
+      "x": 809.3445287525037,
+      "y": 277.9882691260009,
+      "type": "activity",
+      "constraint": "absence_n",
+      "constraintValue": 1
+    },
+    {
+      "id": "activity_1777358036277",
+      "type": "activity",
+      "name": "k",
+      "x": 1263.478939099936,
+      "y": 111.05810023583595,
+      "width": 100,
+      "height": 50,
+      "constraint": null,
+      "constraintValue": null
+    }
+  ],
+  "relations": [
+    {
+      "id": "relation_1777357962333_780",
+      "type": "chain_succession",
+      "sourceId": "node_1777357959140",
+      "targetId": "activity_1777357962333",
+      "waypoints": [
+        {
+          "x": 126.45248588540981,
+          "y": 82.47416720669813
+        },
+        {
+          "x": 226.45248588540983,
+          "y": 82.47416720669813
+        }
+      ]
+    },
+    {
+      "id": "relation_1777357968501_729",
+      "type": "chain_succession",
+      "sourceId": "node_1777357966252",
+      "targetId": "activity_1777357968501",
+      "waypoints": [
+        {
+          "x": 125.88080722482707,
+          "y": 280.27498376833194
+        },
+        {
+          "x": 225.8808072248271,
+          "y": 280.27498376833194
+        }
+      ]
+    },
+    {
+      "id": "relation_1777357970511_664",
+      "type": "chain_succession",
+      "sourceId": "activity_1777357968501",
+      "targetId": "activity_1777357970511",
+      "waypoints": [
+        {
+          "x": 325.8808072248271,
+          "y": 280.27498376833194
+        },
+        {
+          "x": 425.8808072248271,
+          "y": 280.27498376833194
+        }
+      ]
+    },
+    {
+      "id": "relation_1777357977187_585",
+      "type": "chain_precedence",
+      "sourceId": "node_1777357974455",
+      "targetId": "activity_1777357977187",
+      "waypoints": [
+        {
+          "x": 687.2692519170939,
+          "y": 79.04409524320158
+        },
+        {
+          "x": 787.2692519170939,
+          "y": 79.04409524320158
+        }
+      ]
+    },
+    {
+      "id": "relation_1777358016132_128",
+      "type": "chain_precedence",
+      "sourceId": "node_1777357974455",
+      "targetId": "activity_1777357979797",
+      "waypoints": [
+        {
+          "x": 687.2692519170939,
+          "y": 101.58489569918031
+        },
+        {
+          "x": 788.8967566948775,
+          "y": 147.40020181988118
+        }
+      ]
+    },
+    {
+      "id": "relation_1777358026204_876",
+      "type": "chain_response",
+      "sourceId": "activity_1777357977187",
+      "targetId": "activity_1777357982503",
+      "waypoints": [
+        {
+          "x": 887.2692519170939,
+          "y": 86.12027429444572
+        },
+        {
+          "x": 1013.478939099936,
+          "y": 103.98192118459181
+        }
+      ]
+    },
+    {
+      "id": "relation_1777358030771_646",
+      "type": "chain_response",
+      "sourceId": "activity_1777357979797",
+      "targetId": "activity_1777357982503",
+      "waypoints": [
+        {
+          "x": 888.8967566948775,
+          "y": 156.83156914776288
+        },
+        {
+          "x": 1013.478939099936,
+          "y": 124.16753336393295
+        }
+      ]
+    },
+    {
+      "id": "relation_1777358036277_128",
+      "type": "chain_succession",
+      "sourceId": "activity_1777357982503",
+      "targetId": "activity_1777358036277",
+      "waypoints": [
+        {
+          "x": 1113.478939099936,
+          "y": 111.05810023583595
+        },
+        {
+          "x": 1213.478939099936,
+          "y": 111.05810023583595
+        }
+      ]
+    },
+    {
+      "id": "relation_1777358152784_552",
+      "type": "resp_existence",
+      "sourceId": "node_1777357987600",
+      "targetId": "activity_1777357979797",
+      "waypoints": [
+        {
+          "x": 816.1192717892577,
+          "y": 253.2188178967853
+        },
+        {
+          "x": 832.1220136581235,
+          "y": 194.71045350507546
+        }
+      ]
+    }
+  ]
+}

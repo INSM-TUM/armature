@@ -1,0 +1,75 @@
+format_version: '2.0'
+description: ''
+source: /Users/choker/kerstin/armature/Test Data/Discovery/event_log_11_NAND.xes
+activities:
+- a
+- b
+- d
+- e
+- f
+dependencies:
+  a:
+    b:
+      temporal: no_ordering
+      existential: nand
+    d:
+      temporal: no_ordering
+      existential: nand
+    e:
+      temporal: direct_backward
+      existential: implication
+    f:
+      temporal: no_ordering
+      existential: nand
+  b:
+    a:
+      temporal: no_ordering
+      existential: nand
+    d:
+      temporal: no_ordering
+      existential: nand
+    e:
+      temporal: direct_backward
+      existential: implication
+    f:
+      temporal: no_ordering
+      existential: nand
+  d:
+    a:
+      temporal: no_ordering
+      existential: nand
+    b:
+      temporal: no_ordering
+      existential: nand
+    e:
+      temporal: direct_backward
+      existential: implication
+    f:
+      temporal: no_ordering
+      existential: nand
+  e:
+    a:
+      temporal: direct
+      existential: implication_backward
+    b:
+      temporal: direct
+      existential: implication_backward
+    d:
+      temporal: direct
+      existential: implication_backward
+    f:
+      temporal: direct
+      existential: implication_backward
+  f:
+    a:
+      temporal: no_ordering
+      existential: nand
+    b:
+      temporal: no_ordering
+      existential: nand
+    d:
+      temporal: no_ordering
+      existential: nand
+    e:
+      temporal: direct_backward
+      existential: implication

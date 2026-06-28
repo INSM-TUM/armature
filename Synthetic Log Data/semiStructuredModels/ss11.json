@@ -1,0 +1,254 @@
+{
+  "nodes": [
+    {
+      "id": "node_1777360033007",
+      "name": "a",
+      "x": 87.88605909706496,
+      "y": 96.19445506068429,
+      "type": "activity",
+      "constraint": "absence_n",
+      "constraintValue": 1
+    },
+    {
+      "id": "activity_1777360035622",
+      "type": "activity",
+      "name": "b",
+      "x": 339.90881721009583,
+      "y": 37.88323168124311,
+      "width": 100,
+      "height": 50,
+      "constraint": null,
+      "constraintValue": null
+    },
+    {
+      "id": "node_1777360048835",
+      "name": "c",
+      "x": 339.9963484140606,
+      "y": 167.65428763352884,
+      "type": "activity"
+    },
+    {
+      "id": "node_1777360061156",
+      "name": "d",
+      "x": 651.5612184316628,
+      "y": 93.90774041835326,
+      "type": "activity",
+      "constraint": null,
+      "constraintValue": null
+    },
+    {
+      "id": "activity_1777360062200",
+      "type": "activity",
+      "name": "e",
+      "x": 857.2780050374904,
+      "y": 44.74337560823619,
+      "width": 100,
+      "height": 50,
+      "constraint": "absence_n",
+      "constraintValue": 1
+    },
+    {
+      "id": "node_1777360093688",
+      "name": "f",
+      "x": 477.77090561450495,
+      "y": 271.1281251990078,
+      "type": "activity",
+      "constraint": "absence_n",
+      "constraintValue": 1
+    },
+    {
+      "id": "node_1777360188229",
+      "name": "g",
+      "x": 855.650500259707,
+      "y": 168.79764495469436,
+      "type": "activity",
+      "constraint": "absence_n",
+      "constraintValue": 1
+    },
+    {
+      "id": "activity_1777360205154",
+      "type": "activity",
+      "name": "h",
+      "x": 1077.2867581578869,
+      "y": 95.05109773951877,
+      "width": 100,
+      "height": 50,
+      "constraint": null,
+      "constraintValue": null
+    },
+    {
+      "id": "node_1777360299411",
+      "name": "i",
+      "x": 134.19203060426824,
+      "y": 369.4568548192419,
+      "type": "activity",
+      "constraint": "absence_n",
+      "constraintValue": 1
+    },
+    {
+      "id": "activity_1777360302377",
+      "type": "activity",
+      "name": "j",
+      "x": 334.1920306042682,
+      "y": 369.4568548192419,
+      "width": 100,
+      "height": 50,
+      "constraint": "absence_n",
+      "constraintValue": 1
+    }
+  ],
+  "relations": [
+    {
+      "id": "relation_1777360035622_564",
+      "type": "chain_precedence",
+      "sourceId": "node_1777360033007",
+      "targetId": "activity_1777360035622",
+      "waypoints": [
+        {
+          "x": 137.88605909706496,
+          "y": 84.62581264600027
+        },
+        {
+          "x": 289.90881721009583,
+          "y": 49.451874095927124
+        }
+      ]
+    },
+    {
+      "id": "relation_1777360051992_103",
+      "type": "chain_precedence",
+      "sourceId": "node_1777360033007",
+      "targetId": "node_1777360048835",
+      "waypoints": [
+        {
+          "x": 137.88605909706496,
+          "y": 110.36679066159131
+        },
+        {
+          "x": 289.9963484140606,
+          "y": 153.48195203262182
+        }
+      ]
+    },
+    {
+      "id": "relation_1777360174159_809",
+      "type": "response",
+      "sourceId": "node_1777360061156",
+      "targetId": "activity_1777360062200",
+      "waypoints": [
+        {
+          "x": 701.5612184316628,
+          "y": 81.95821368762502
+        },
+        {
+          "x": 807.2780050374904,
+          "y": 56.69290233896443
+        }
+      ]
+    },
+    {
+      "id": "relation_1777360191996_861",
+      "type": "response",
+      "sourceId": "node_1777360061156",
+      "targetId": "node_1777360188229",
+      "waypoints": [
+        {
+          "x": 701.5612184316628,
+          "y": 112.25507935392748
+        },
+        {
+          "x": 805.650500259707,
+          "y": 150.45030601912015
+        }
+      ]
+    },
+    {
+      "id": "relation_1777360205154_345",
+      "type": "precedence",
+      "sourceId": "activity_1777360062200",
+      "targetId": "activity_1777360205154",
+      "waypoints": [
+        {
+          "x": 907.2780050374904,
+          "y": 56.17649393143137
+        },
+        {
+          "x": 1027.2867581578869,
+          "y": 83.61797941632359
+        }
+      ]
+    },
+    {
+      "id": "relation_1777360221282_795",
+      "type": "precedence",
+      "sourceId": "node_1777360188229",
+      "targetId": "activity_1777360205154",
+      "waypoints": [
+        {
+          "x": 905.650500259707,
+          "y": 152.1608031503505
+        },
+        {
+          "x": 1027.2867581578869,
+          "y": 111.68793954386264
+        }
+      ]
+    },
+    {
+      "id": "relation_1777360231849_477",
+      "type": "not_coexistence",
+      "sourceId": "node_1777360048835",
+      "targetId": "activity_1777360035622",
+      "waypoints": [
+        {
+          "x": 339.97948579428294,
+          "y": 142.6542890552686
+        },
+        {
+          "x": 339.9256798298735,
+          "y": 62.883230259503335
+        }
+      ]
+    },
+    {
+      "id": "relation_1777360244851_685",
+      "type": "resp_existence",
+      "sourceId": "node_1777360061156",
+      "targetId": "node_1777360033007",
+      "waypoints": [
+        {
+          "x": 642.8112099566274,
+          "y": 68.90774041835326
+        },
+        {
+          "x": 603.5401644307411,
+          "y": -43.295138121508316
+        },
+        {
+          "x": 334.2795501887592,
+          "y": -41.58010213976005
+        },
+        {
+          "x": 132.59560055710813,
+          "y": 71.19445506068429
+        }
+      ]
+    },
+    {
+      "id": "relation_1777360302377_364",
+      "type": "chain_succession",
+      "sourceId": "node_1777360299411",
+      "targetId": "activity_1777360302377",
+      "waypoints": [
+        {
+          "x": 184.19203060426824,
+          "y": 369.4568548192419
+        },
+        {
+          "x": 284.1920306042682,
+          "y": 369.4568548192419
+        }
+      ]
+    }
+  ]
+}

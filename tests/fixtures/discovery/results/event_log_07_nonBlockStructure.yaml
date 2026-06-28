@@ -1,0 +1,75 @@
+format_version: '2.0'
+description: ''
+source: /Users/choker/kerstin/armature/Test Data/Discovery/event_log_07_nonBlockStructure.xes
+activities:
+- a
+- b
+- c
+- d
+- e
+dependencies:
+  a:
+    b:
+      temporal: independence
+      existential: implication_backward
+    c:
+      temporal: independence
+      existential: implication_backward
+    d:
+      temporal: eventual
+      existential: equivalence
+    e:
+      temporal: independence
+      existential: equivalence
+  b:
+    a:
+      temporal: independence
+      existential: implication
+    c:
+      temporal: no_ordering
+      existential: xor
+    d:
+      temporal: eventual
+      existential: implication
+    e:
+      temporal: eventual
+      existential: implication
+  c:
+    a:
+      temporal: independence
+      existential: implication
+    b:
+      temporal: no_ordering
+      existential: xor
+    d:
+      temporal: eventual
+      existential: implication
+    e:
+      temporal: eventual
+      existential: implication
+  d:
+    a:
+      temporal: eventual_backward
+      existential: equivalence
+    b:
+      temporal: eventual_backward
+      existential: implication_backward
+    c:
+      temporal: eventual_backward
+      existential: implication_backward
+    e:
+      temporal: independence
+      existential: equivalence
+  e:
+    a:
+      temporal: independence
+      existential: equivalence
+    b:
+      temporal: eventual_backward
+      existential: implication_backward
+    c:
+      temporal: eventual_backward
+      existential: implication_backward
+    d:
+      temporal: independence
+      existential: equivalence

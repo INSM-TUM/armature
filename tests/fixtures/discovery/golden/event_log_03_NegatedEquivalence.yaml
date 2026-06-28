@@ -1,0 +1,109 @@
+format_version: '2.0'
+description: ''
+source: /Users/choker/dev/armature/Test Data/Discovery/event_log_03_NegatedEquivalence.xes
+num_traces: 88
+num_variants: 6
+activities:
+- a
+- b
+- c
+- d
+- e
+- f
+dependencies:
+  a:
+    b:
+      temporal: direct
+      existential: independence
+    c:
+      temporal: true_eventual
+      existential: implication
+    d:
+      temporal: no_ordering
+      existential: negated_equivalence
+    e:
+      temporal: direct
+      existential: independence
+    f:
+      temporal: no_ordering
+      existential: nand
+  b:
+    a:
+      temporal: direct_backward
+      existential: independence
+    c:
+      temporal: direct
+      existential: independence
+    d:
+      temporal: direct_backward
+      existential: independence
+    e:
+      temporal: no_ordering
+      existential: negated_equivalence
+    f:
+      temporal: direct
+      existential: independence
+  c:
+    a:
+      temporal: true_eventual_backward
+      existential: implication_backward
+    b:
+      temporal: direct_backward
+      existential: independence
+    d:
+      temporal: true_eventual_backward
+      existential: or
+    e:
+      temporal: direct_backward
+      existential: independence
+    f:
+      temporal: no_ordering
+      existential: negated_equivalence
+  d:
+    a:
+      temporal: no_ordering
+      existential: negated_equivalence
+    b:
+      temporal: direct
+      existential: independence
+    c:
+      temporal: true_eventual
+      existential: or
+    e:
+      temporal: direct
+      existential: independence
+    f:
+      temporal: true_eventual
+      existential: implication_backward
+  e:
+    a:
+      temporal: direct_backward
+      existential: independence
+    b:
+      temporal: no_ordering
+      existential: negated_equivalence
+    c:
+      temporal: direct
+      existential: independence
+    d:
+      temporal: direct_backward
+      existential: independence
+    f:
+      temporal: direct
+      existential: independence
+  f:
+    a:
+      temporal: no_ordering
+      existential: nand
+    b:
+      temporal: direct_backward
+      existential: independence
+    c:
+      temporal: no_ordering
+      existential: negated_equivalence
+    d:
+      temporal: true_eventual_backward
+      existential: implication
+    e:
+      temporal: direct_backward
+      existential: independence

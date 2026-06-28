@@ -1,0 +1,37 @@
+{# Diff view - expects 'comp' object with clean_matrix, noisy_matrix, changes #}
+<div style="display: flex; gap: 20px; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 400px;">
+        <h4>Clean: {{ comp.clean_name }}</h4>
+        {% with matrix=comp.clean_matrix, changes={} %}
+        {% include "matrix_grid.html.j2" %}
+        {% endwith %}
+    </div>
+    <div style="flex: 1; min-width: 400px;">
+        <h4>Noisy: {{ comp.noisy_name }}</h4>
+        {% with matrix=comp.noisy_matrix, changes=comp.changes %}
+        {% include "matrix_grid.html.j2" %}
+        {% endwith %}
+    </div>
+</div>
+
+{% if comp.changes %}
+<h4>Changes Summary</h4>
+<table class="summary-table">
+    <tr>
+        <th>Cell</th>
+        <th>Clean</th>
+        <th>Noisy</th>
+        <th>Change Type</th>
+    </tr>
+    {% for (source, target), change_type in comp.changes.items() %}
+    <tr>
+        <td>{{ source }} -> {{ target }}</td>
+        <td>{{ comp.clean_matrix.get_cell(source, target).temporal.value }} / {{ comp.clean_matrix.get_cell(source, target).existential.value }}</td>
+        <td>{{ comp.noisy_matrix.get_cell(source, target).temporal.value }} / {{ comp.noisy_matrix.get_cell(source, target).existential.value }}</td>
+        <td class="status-warn">{{ change_type }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<p class="status-ok">No differences detected!</p>
+{% endif %}

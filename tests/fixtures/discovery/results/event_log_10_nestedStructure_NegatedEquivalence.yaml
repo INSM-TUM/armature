@@ -1,0 +1,49 @@
+format_version: '2.0'
+description: ''
+source: /Users/choker/kerstin/armature/Test Data/Discovery/event_log_10_nestedStructure_NegatedEquivalence.xes
+activities:
+- a
+- b
+- c
+- d
+dependencies:
+  a:
+    b:
+      temporal: direct
+      existential: implication_backward
+    c:
+      temporal: direct
+      existential: implication_backward
+    d:
+      temporal: no_ordering
+      existential: xor
+  b:
+    a:
+      temporal: direct_backward
+      existential: implication
+    c:
+      temporal: no_ordering
+      existential: nand
+    d:
+      temporal: no_ordering
+      existential: nand
+  c:
+    a:
+      temporal: direct_backward
+      existential: implication
+    b:
+      temporal: no_ordering
+      existential: nand
+    d:
+      temporal: no_ordering
+      existential: nand
+  d:
+    a:
+      temporal: no_ordering
+      existential: xor
+    b:
+      temporal: no_ordering
+      existential: nand
+    c:
+      temporal: no_ordering
+      existential: nand

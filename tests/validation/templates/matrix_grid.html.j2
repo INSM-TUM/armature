@@ -1,0 +1,56 @@
+{# Matrix grid component - expects 'matrix' and optional 'changes' dict #}
+<div class="matrix-container">
+    <table class="matrix-grid">
+        <thead>
+            <tr>
+                <th></th>
+                {% for activity in matrix.activities %}
+                <th title="{{ activity }}">{{ activity[:8] }}{% if activity|length > 8 %}...{% endif %}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for source in matrix.activities %}
+            <tr>
+                <th title="{{ source }}">{{ source[:8] }}{% if source|length > 8 %}...{% endif %}</th>
+                {% for target in matrix.activities %}
+                {% set cell = matrix.get_cell(source, target) %}
+                {% set change_class = '' %}
+                {% if changes and (source, target) in changes %}
+                    {% set change_class = 'cell-' ~ changes[(source, target)] %}
+                {% endif %}
+                {% set temporal_color = 'var(--color-' ~ cell.temporal.value.replace('_', '-') ~ ')' %}
+                {% set existential_color = 'var(--color-' ~ cell.existential.value.replace('_', '-') ~ ')' %}
+                <td class="{{ change_class }}"
+                    style="background: linear-gradient(90deg, {{ temporal_color }} 50%, {{ existential_color }} 50%)"
+                    title="[{{ source }} → {{ target }}]&#10;Temporal: {{ cell.temporal.value }}&#10;Existential: {{ cell.existential.value }}">
+                    <span class="temporal">{{ cell.temporal.value|temporal_symbol }}</span>
+                    <span class="existential">{{ cell.existential.value|existential_symbol }}</span>
+                </td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<div class="legend">
+    <strong>Temporal:</strong>
+    <div class="legend-item"><span class="legend-color" style="background: var(--color-direct)"></span> ≺d Direct</div>
+    <div class="legend-item"><span class="legend-color" style="background: var(--color-direct-backward)"></span> ≻d Direct Backward</div>
+    <div class="legend-item"><span class="legend-color" style="background: var(--color-true-eventual)"></span> ≺t True Eventual</div>
+    <div class="legend-item"><span class="legend-color" style="background: var(--color-true-eventual-backward)"></span> ≻t True Eventual Backward</div>
+    <div class="legend-item"><span class="legend-color" style="background: var(--color-eventual)"></span> ≺ Eventual</div>
+    <div class="legend-item"><span class="legend-color" style="background: var(--color-eventual-backward)"></span> ≻ Eventual Backward</div>
+    <div class="legend-item"><span class="legend-color" style="background: var(--color-independence)"></span> − Independence</div>
+    <div class="legend-item"><span class="legend-color" style="background: var(--color-no-ordering)"></span> × No Ordering</div>
+</div>
+<div class="legend">
+    <strong>Existential:</strong>
+    <div class="legend-item"><span class="legend-color" style="background: var(--color-equivalence)"></span> ⇔ Equivalence</div>
+    <div class="legend-item"><span class="legend-color" style="background: var(--color-implication)"></span> ⇒ Implication</div>
+    <div class="legend-item"><span class="legend-color" style="background: var(--color-implication-backward)"></span> ⇐ Implication Backward</div>
+    <div class="legend-item"><span class="legend-color" style="background: var(--color-xor)"></span> ⇎ XOR</div>
+    <div class="legend-item"><span class="legend-color" style="background: var(--color-nand)"></span> ⊼ NAND</div>
+    <div class="legend-item"><span class="legend-color" style="background: var(--color-or)"></span> ∨ OR</div>
+</div>

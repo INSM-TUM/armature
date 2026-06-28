@@ -1,0 +1,185 @@
+{
+  "nodes": [
+    {
+      "id": "node_1776857594589",
+      "name": "a",
+      "x": 352.52801044832137,
+      "y": 227.88858551735126,
+      "type": "activity",
+      "constraint": "init",
+      "constraintValue": null
+    },
+    {
+      "id": "activity_1776857597714",
+      "type": "activity",
+      "name": "b",
+      "x": 552.5280104483213,
+      "y": 227.88858551735126,
+      "width": 100,
+      "height": 50,
+      "constraint": "exactly_n",
+      "constraintValue": 1
+    },
+    {
+      "id": "activity_1776857633474",
+      "type": "activity",
+      "name": "c",
+      "x": 754.173415397905,
+      "y": 125.05077616836603,
+      "width": 100,
+      "height": 50,
+      "constraint": null,
+      "constraintValue": null
+    },
+    {
+      "id": "activity_1776857637259",
+      "type": "activity",
+      "name": "d",
+      "x": 753.3507129231132,
+      "y": 334.8399072402959,
+      "width": 100,
+      "height": 50,
+      "constraint": null,
+      "constraintValue": null
+    },
+    {
+      "id": "node_1776857655764",
+      "name": "i",
+      "x": 1092.137535286223,
+      "y": 220.48426324422434,
+      "type": "activity"
+    },
+    {
+      "id": "activity_1776857660518",
+      "type": "activity",
+      "name": "j",
+      "x": 1292.137535286223,
+      "y": 220.48426324422434,
+      "width": 100,
+      "height": 50,
+      "constraint": null,
+      "constraintValue": null
+    },
+    {
+      "id": "node_1776857671072",
+      "name": "e",
+      "x": 371.45016736853466,
+      "y": 530.6430962407637,
+      "type": "activity"
+    },
+    {
+      "id": "activity_1776857674027",
+      "type": "activity",
+      "name": "f",
+      "x": 571.4501673685347,
+      "y": 530.6430962407637,
+      "width": 100,
+      "height": 50,
+      "constraint": null,
+      "constraintValue": null
+    },
+    {
+      "id": "node_1776857682297",
+      "name": "g",
+      "x": 921.0154205295117,
+      "y": 437.67771658928115,
+      "type": "activity"
+    },
+    {
+      "id": "node_1776857685540",
+      "name": "h",
+      "x": 915.2565032059686,
+      "y": 596.4592942241143,
+      "type": "activity"
+    },
+    {
+      "id": "node_1776857689412",
+      "name": "k",
+      "x": 915.2565032059686,
+      "y": 515.8344516945099,
+      "type": "activity"
+    }
+  ],
+  "relations": [
+    {
+      "id": "relation_1776857597714_531",
+      "type": "chain_succession",
+      "sourceId": "node_1776857594589",
+      "targetId": "activity_1776857597714",
+      "waypoints": [
+        {
+          "x": 402.52801044832137,
+          "y": 227.88858551735126
+        },
+        {
+          "x": 502.5280104483213,
+          "y": 227.88858551735126
+        }
+      ]
+    },
+    {
+      "id": "relation_1776857633474_315",
+      "type": "precedence",
+      "sourceId": "activity_1776857597714",
+      "targetId": "activity_1776857633474",
+      "waypoints": [
+        {
+          "x": 601.5482604483213,
+          "y": 202.88858551735126
+        },
+        {
+          "x": 705.153165397905,
+          "y": 150.05077616836604
+        }
+      ]
+    },
+    {
+      "id": "relation_1776857637259_185",
+      "type": "precedence",
+      "sourceId": "activity_1776857597714",
+      "targetId": "activity_1776857637259",
+      "waypoints": [
+        {
+          "x": 599.4705585252444,
+          "y": 252.88858551735126
+        },
+        {
+          "x": 706.4081648461901,
+          "y": 309.8399072402959
+        }
+      ]
+    },
+    {
+      "id": "relation_1776857660519_702",
+      "type": "chain_succession",
+      "sourceId": "node_1776857655764",
+      "targetId": "activity_1776857660518",
+      "waypoints": [
+        {
+          "x": 1142.137535286223,
+          "y": 220.48426324422434
+        },
+        {
+          "x": 1242.137535286223,
+          "y": 220.48426324422434
+        }
+      ]
+    },
+    {
+      "id": "relation_1776857674027_98",
+      "type": "chain_succession",
+      "sourceId": "node_1776857671072",
+      "targetId": "activity_1776857674027",
+      "waypoints": [
+        {
+          "x": 421.45016736853466,
+          "y": 530.6430962407637
+        },
+        {
+          "x": 521.4501673685347,
+          "y": 530.6430962407637
+        }
+      ]
+    }
+  ]
+}

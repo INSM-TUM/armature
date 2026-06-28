@@ -1,0 +1,107 @@
+format_version: '2.0'
+description: ''
+source: /Users/choker/kerstin/armature/Test Data/Discovery/event_log_09_NegatedEquivalence_Parallelism.xes
+activities:
+- a
+- b
+- c
+- d
+- e
+- f
+dependencies:
+  a:
+    b:
+      temporal: no_ordering
+      existential: nand
+    c:
+      temporal: eventual
+      existential: implication
+    d:
+      temporal: eventual
+      existential: implication
+    e:
+      temporal: no_ordering
+      existential: nand
+    f:
+      temporal: no_ordering
+      existential: nand
+  b:
+    a:
+      temporal: no_ordering
+      existential: nand
+    c:
+      temporal: eventual
+      existential: implication
+    d:
+      temporal: eventual
+      existential: implication
+    e:
+      temporal: no_ordering
+      existential: nand
+    f:
+      temporal: no_ordering
+      existential: nand
+  c:
+    a:
+      temporal: eventual_backward
+      existential: implication_backward
+    b:
+      temporal: eventual_backward
+      existential: implication_backward
+    d:
+      temporal: independence
+      existential: equivalence
+    e:
+      temporal: no_ordering
+      existential: xor
+    f:
+      temporal: no_ordering
+      existential: xor
+  d:
+    a:
+      temporal: eventual_backward
+      existential: implication_backward
+    b:
+      temporal: eventual_backward
+      existential: implication_backward
+    c:
+      temporal: independence
+      existential: equivalence
+    e:
+      temporal: no_ordering
+      existential: xor
+    f:
+      temporal: no_ordering
+      existential: xor
+  e:
+    a:
+      temporal: no_ordering
+      existential: nand
+    b:
+      temporal: no_ordering
+      existential: nand
+    c:
+      temporal: no_ordering
+      existential: xor
+    d:
+      temporal: no_ordering
+      existential: xor
+    f:
+      temporal: direct
+      existential: equivalence
+  f:
+    a:
+      temporal: no_ordering
+      existential: nand
+    b:
+      temporal: no_ordering
+      existential: nand
+    c:
+      temporal: no_ordering
+      existential: xor
+    d:
+      temporal: no_ordering
+      existential: xor
+    e:
+      temporal: direct_backward
+      existential: equivalence

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Discovery Validation{% endblock %}</title>
+    <style>
+        :root {
+            /* Forward temporal dependencies */
+            --color-direct: #90EE90;
+            --color-eventual: #98FB98;
+            --color-true-eventual: #87CEEB;
+            --color-independence: #F0F0F0;
+            --color-no-ordering: #FFFFFF;
+            
+            /* Backward temporal dependencies (same colors as forward) */
+            --color-direct-backward: #90EE90;
+            --color-eventual-backward: #98FB98;
+            --color-true-eventual-backward: #87CEEB;
+            
+            /* Forward existential dependencies */
+            --color-equivalence: #FFD700;
+            --color-implication: #FFA07A;
+            --color-xor: #DDA0DD;
+            --color-nand: #FF6B6B;
+            --color-or: #87CEFA;
+            
+            /* Backward existential dependencies (same colors as forward) */
+            --color-implication-backward: #FFA07A;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fafafa;
+        }
+
+        h1, h2, h3 { color: #333; }
+
+        .summary-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .summary-table th, .summary-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .summary-table th { background: #f5f5f5; font-weight: 600; }
+        .summary-table tr:hover { background: #f9f9f9; }
+
+        .status-ok { color: #22c55e; }
+        .status-error { color: #ef4444; }
+        .status-warn { color: #f59e0b; }
+
+        .matrix-container {
+            overflow-x: auto;
+            margin: 20px 0;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .matrix-grid {
+            border-collapse: collapse;
+            font-family: monospace;
+            font-size: 12px;
+        }
+
+        .matrix-grid th, .matrix-grid td {
+            border: 1px solid #ddd;
+            padding: 4px 8px;
+            text-align: center;
+            min-width: 60px;
+        }
+
+        .matrix-grid td .temporal,
+        .matrix-grid td .existential {
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .matrix-grid td .temporal {
+            margin-right: 4px;
+        }
+
+        .matrix-grid th {
+            background: #f5f5f5;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+        }
+
+        .matrix-grid th:first-child {
+            position: sticky;
+            left: 0;
+            z-index: 1;
+        }
+
+        /* Temporal-primary coloring (default if no existential override) */
+        .cell-temporal-direct { background-color: var(--color-direct); }
+        .cell-temporal-eventual { background-color: var(--color-eventual); }
+        .cell-temporal-true_eventual { background-color: var(--color-true-eventual); }
+        .cell-temporal-independence { background-color: var(--color-independence); }
+        .cell-temporal-no_ordering { background-color: var(--color-no-ordering); }
+
+        /* Existential overrides temporal when non-independence */
+        .cell-existential-equivalence { background-color: var(--color-equivalence); }
+        .cell-existential-implication { background-color: var(--color-implication); }
+        .cell-existential-xor { background-color: var(--color-xor); }
+        .cell-existential-nand { background-color: var(--color-nand); }
+        .cell-existential-or { background-color: var(--color-or); }
+
+        .cell-changed { outline: 3px solid #ef4444; outline-offset: -2px; }
+        .cell-added { outline: 3px solid #22c55e; outline-offset: -2px; }
+        .cell-removed { outline: 3px solid #f59e0b; outline-offset: -2px; }
+
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+            padding: 10px;
+            background: #f9f9f9;
+            border-radius: 4px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 12px;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .collapsible {
+            background: #f5f5f5;
+            border: none;
+            padding: 10px 15px;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+
+        .collapsible:hover { background: #eee; }
+        .collapsible::before { content: '+ '; }
+        .collapsible.active::before { content: '- '; }
+
+        .content {
+            display: none;
+            padding: 10px;
+            background: white;
+            border: 1px solid #eee;
+            border-top: none;
+        }
+
+        .content.show { display: block; }
+
+        .timestamp { color: #666; font-size: 12px; }
+        .file-link { color: #0066cc; text-decoration: none; }
+        .file-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    {% block content %}{% endblock %}
+
+    <script>
+        document.querySelectorAll('.collapsible').forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.classList.toggle('active');
+                const content = this.nextElementSibling;
+                content.classList.toggle('show');
+            });
+        });
+    </script>
+</body>
+</html>
